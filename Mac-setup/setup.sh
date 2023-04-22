@@ -26,7 +26,7 @@ if [[ ${SCRIPT_EXECUTION_COUNT} -eq 1 ]]; then
 		else
 			read -p "Are you sure you want to skip Time Machine setup? (y/n)" choice
 
-			if [$choice = "y"]
+			if [$choice = "y"]; then
 				echo "Wohoo! I sense an adventure ahead!"
 				break
 			else
@@ -89,7 +89,7 @@ if [[ ${SCRIPT_EXECUTION_COUNT} -eq 1 ]]; then
 
 	# add it to the shells list
 
-	sudo echo $fish_path >> /etc/shells
+	sudo sh -c "echo $fish_path >> /etc/shells"
 	echo "Added fish to shells list"
 	echo "Restart terminal and re-run script..."
 
