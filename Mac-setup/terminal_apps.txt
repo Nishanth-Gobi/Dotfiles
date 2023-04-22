@@ -1,0 +1,4 @@
+wget
+git
+fish
+cmatrix
