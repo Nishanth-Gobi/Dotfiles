@@ -1,0 +1,13 @@
+iterm2
+visual-studio-code
+sublime-text
+slack
+discord
+zoom
+brave-browser
+figma
+vlc
+gimp
+alt-tab
+rectangle
+bitwarden
