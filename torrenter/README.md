@@ -1,6 +1,7 @@
 # TPB-Torrenter
 
-A simple script to get the magnet link of a movie from The Pirate Bay. Run, `torrenter.py -h` for usage info.
+A simple script to get the magnet link of a movie from The Pirate Bay. 
+Run `torrenter.py -h` for usage info.
 
 ### Requirements
 
