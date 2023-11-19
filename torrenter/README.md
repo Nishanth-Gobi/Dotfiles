@@ -9,4 +9,4 @@ A simple script to get the magnet link of a movie from The Pirate Bay. Run, `tor
 
 ### Improvement 
 
-- Use something like Aria2[https://aria2.github.io/] to automate the download
+- Use something like [Aria2](https://aria2.github.io/) to automate the download
