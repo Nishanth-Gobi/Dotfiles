@@ -1,129 +1,67 @@
 #!/bin/bash
 
-# Set the variable to 0 if it doesn't exist
-if [[ ! -f script_execution_count.txt ]]; then
-  echo "0" > script_execution_count.txt
-fi
-
-# Read the value from the file and increment it
-SCRIPT_EXECUTION_COUNT=$(($(cat script_execution_count.txt)+1))
-
-# Save the new value to the file
-echo "${SCRIPT_EXECUTION_COUNT}" > script_execution_count.txt
-
-
-if [[ ${SCRIPT_EXECUTION_COUNT} -eq 1 ]]; then
-
-	# ------------------------------------------------
-	# setup Time Machine
-	# ------------------------------------------------
-
-	while true; do
-
-		read -p "Have you setup Time Machine? (y/n)" choice
-		if [ $choice = "y" ]; then
-			break
-		else
-			read -p "Are you sure you want to skip Time Machine setup? (y/n)" choice
-
-			if [$choice = "y"]; then
-				echo "Wohoo! I sense an adventure ahead!"
-				break
-			else
-				echo "You can't have it both ways!"
-			fi
-		fi
-	done
-		
-
-	# ------------------------------------------------
-	# install homebrew
-	# ------------------------------------------------
-
-	count=0
-	while true; do
-		
-		if command -v brew >/dev/null 2>&1; then
-			echo "Homebrew is installed"
-		else
-			echo "Homebrew is not installed!"
-			count=$((count+1))
-			if [[ $count -ge 4 ]]; then
-				echo "Failed to install Homebrew after 3 attemps!"
-				exit 1
-			fi
-		fi
-
+install_homebrew() {
+	if ! command -v brew &> /dev/null; then
 		echo "Installing Homebrew..."
-		/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"	
-	done
-
-
-	# ------------------------------------------------
-	# install GUI apps
-	# ------------------------------------------------
-	echo "Installing GUI apps..."
-	xargs brew install --cask < gui_apps.txt
-	echo "Installde GUI apps"
-
-
-	# ------------------------------------------------
-	# install Terminal apps
-	# ------------------------------------------------
-	echo "Installing Terminal apps..."
-	xargs brew install < terminal_apps.txt
-	echo "Installed Terminal apps..."
-
-
-	# ------------------------------------------------
-	# setup fish
-	# ------------------------------------------------
-	if command -v fish >/dev/null 2>&1; then
-		echo "Fish shell is installed"
+		/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 	else
-		echo "Fish shell is not installed"
-		exit 1
+		echo "Homebrew is already installed"
 	fi
+}
 
-	fish_path=$(which fish) 
-
-	# add it to the shells list
-
-	sudo sh -c "echo $fish_path >> /etc/shells"
-	echo "Added fish to shells list"
-	echo "Restart terminal and re-run script..."
-
-
-elif [[ ${SCRIPT_EXECUTION_COUNT} -eq 2 ]]; then
-
-	fish_path=$(which fish) 
-
-	# change default shell
-
-	chsh -s $fish_path
-	echo "Changed default shell"
-	echo "Restart terminal and re-run script..."
-
-elif [[ ${SCRIPT_EXECUTION_COUNT} -eq 3 ]]; then
-
-	# ------------------------------------------------
-	# setup git
-	# ------------------------------------------------
-
-	if command -v git >/dev/null 2>&1; then
-		echo "Git is installed"
+install_gui_apps() {
+	GUI_APPS_FILE="gui-apps"
+	if [[ -f "$GUI_APPS_FILE" ]]; then
+		echo "Installing GUI apps"
+		xargs brew install --cask < "$GUI_APPS_FILE"
 	else
-		echo "Git is not installed"
-  		exit 1
+		echo "File containing GUI app list not found: $GUI_APPS_FILE"
 	fi
+}
 
-	echo "Setting up git..."
+install_terminal_apps() {
+	TERMINAL_APPS_FILE="terminal-apps"
+	if [[ -f "$TERMINAL_APPS_FILE" ]]; then
+		echo "Installing terminal apps"
+		xargs brew install < "$TERMINAL_APPS_FILE"
+	else
+		echo "File containing terminal app list not found: $TERMINAL_APPS_FILE"
+	fi
+}
 
-	git config --global user.name "Nishanth Gobi"
-	git config --global user.email "nish.professional@gmail.com"
-	git config --global init.defaultBranch main
+install_fonts() {
+    echo "Please click on the following link to download and install required fonts:"
+    echo "https://github.com/romkatv/powerlevel10k?tab=readme-ov-file#meslo-nerd-font-patched-for-powerlevel10k"
+    read -p "Press 'y' once you've installed the fonts: " -n 1 -r
+    echo    # move to a new line after user input
+    if [[ $REPLY =~ ^[Yy]$ ]]; then
+        echo "Continuing with the script..."
+    else
+        echo "Fonts not installed. Some ligatures might not be shown..."
+    fi
+}
 
-	echo "Make sure to setup your GitHub SSH Key"
+setup_zsh() {
+	echo "Installing Oh-my-zsh..."
+	sh -c "$(curl -fsSL https://install.ohmyz.sh)"
+
+	install_fonts
+
+	echo "Installing Powerlevel10k..."
+	git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
+
+	echo "Switching to Powerlevel10k theme..."
+	sed -i -e 's/ZSH_THEME="robbyrussell"/ZSH_THEME="powerlevel10k/powerlevel10k"/' ~/.zshrc
 	
-	echo -e "*** Good luck on your Mac journey :) \n This script is done! ***"
-fi
+	echo "Restart the shell and type 'p10k configure'"
+}
+
+
+echo "Starting script..."
+
+install_homebrew
+install_terminal_apps
+install_gui_apps
+setup_zsh
+
+echo "Setup complete."
