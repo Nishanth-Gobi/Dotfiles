@@ -4,6 +4,8 @@ install_homebrew() {
 	if ! command -v brew &> /dev/null; then
 		echo "Installing Homebrew..."
 		/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+		echo "Set your path variable and re-run the script"
+		exit 1
 	else
 		echo "Homebrew is already installed"
 	fi
