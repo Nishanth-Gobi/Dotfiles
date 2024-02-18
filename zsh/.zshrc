@@ -2,17 +2,17 @@
 if [[ "$TERM" == "xterm-kitty" ]]; then
 
   images=(
-    System/NeofetchImages/JoaoAntunes-1.jpg 
-    System/NeofetchImages/JoaoAntunes-2.jpg 
-    System/NeofetchImages/JoaoAntunes-3.jpg 
-    System/NeofetchImages/JoaoAntunes-4.jpg 
+    System/TerminalImages/JoaoAntunes-1.jpg 
+    System/TerminalImages/JoaoAntunes-2.jpg 
+    System/TerminalImages/JoaoAntunes-3.jpg 
+    System/TerminalImages/JoaoAntunes-4.jpg 
   )
   random_index=$((RANDOM % ${#images[@]}))
 
   fastfetch --logo ${images[$random_index+1]} --logo-height 28 --logo-type kitty
 
 elif [[ "$TERM" == "xterm-256color" ]]; then
-  fastfetch	--logo System/ASCII/F.txt
+  fastfetch	--logo System/ASCII/fenrir.txt
 fi
 
 if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
