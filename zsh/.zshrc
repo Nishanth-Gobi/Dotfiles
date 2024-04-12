@@ -2,17 +2,18 @@
 if [[ "$TERM" == "xterm-kitty" ]]; then
 
   images=(
-    System/TerminalImages/JoaoAntunes-1.jpg 
-    System/TerminalImages/JoaoAntunes-2.jpg 
-    System/TerminalImages/JoaoAntunes-3.jpg 
-    System/TerminalImages/JoaoAntunes-4.jpg 
+    System/NeofetchImages/JoaoAntunes-1.jpg 
+    System/NeofetchImages/JoaoAntunes-2.jpg 
+    System/NeofetchImages/JoaoAntunes-3.jpg 
+    System/NeofetchImages/JoaoAntunes-4.jpg 
   )
   random_index=$((RANDOM % ${#images[@]}))
 
   fastfetch --logo ${images[$random_index+1]} --logo-height 28 --logo-type kitty
 
-elif [[ "$TERM" == "xterm-256color" ]]; then
-  fastfetch	--logo System/ASCII/fenrir.txt
+elif [[ "$TERM" == "xterm-256color" && "$TERM_PROGRAM" != "vscode" ]]; then
+  fastfetch --logo System/ASCII/F.txt
+	
 fi
 
 if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
@@ -52,6 +53,5 @@ alias l="ls -al"
 export PATH="$HOME/.jenv/bin:$PATH"
 eval "$(jenv init -)"
 
-### MANAGED BY RANCHER DESKTOP START (DO NOT EDIT)
-export PATH="/Users/nishanthg/.rd/bin:$PATH"
-### MANAGED BY RANCHER DESKTOP END (DO NOT EDIT)
+# Lunar Vim
+export PATH="$HOME/.local/bin:$PATH"
