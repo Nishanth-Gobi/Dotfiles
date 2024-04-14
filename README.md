@@ -1,7 +1,6 @@
-# My Dotfiles
-
-Config files for easy post-hop setup.
+# My Config Files
 
 - Shells: `zsh`, `fish`
 - Terminals: `Alacritty`
 - Fetchers: `Neofetch`, `fastfetch`
+- Editors: `VS Code`
