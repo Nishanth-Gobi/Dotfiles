@@ -9,7 +9,7 @@ autoload -Uz compinit; compinit
 source $ZDOTDIR/plugins/fzf-tab/fzf-tab.plugin.zsh
 source $ZDOTDIR/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 source $ZDOTDIR/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-source "$ZDOTDIR/plugins/gitstaus/gitstatus.prompt.zsh"
+source "$ZDOTDIR/plugins/gitstatus/gitstatus.prompt.zsh"
 
 # -----------------------------------------------------------------------------
 # ********************************* Aliases ***********************************
@@ -70,6 +70,13 @@ RPROMPT='$GITSTATUS_PROMPT %(0?||💀)'
 
 
 # -----------------------------------------------------------------------------
+# ************************************ Git ************************************
+# -----------------------------------------------------------------------------
+
+export GIT_CONFIG_GLOBAL=~/.config/git/.gitconfig
+
+
+# -----------------------------------------------------------------------------
 # ********************************** Homebrew *********************************
 # -----------------------------------------------------------------------------
 
@@ -84,15 +91,14 @@ eval "$(/opt/homebrew/bin/brew shellenv)"
 if [[ "$TERM" == "xterm-kitty" ]]; then
 
   images=(
-    ~/System/TermImages/JoaoAntunes-1.jpg 
-    ~/System/TermImages/JoaoAntunes-2.jpg 
-    ~/System/TermImages/JoaoAntunes-3.jpg 
-    ~/System/TermImages/JoaoAntunes-4.jpg 
+    "~/System/TerminalArt/JoaoAntunes-1.png 27 80"
+    "~/System/TerminalArt/JoaoAntunes-2.png 27 50" 
+    "~/System/TerminalArt/JoaoAntunes-3.png 27 50" 
   )
   random_index=$((RANDOM % ${#images[@]}))
+  eval "img=(${images[$random_index+1]})"
 
-  fastfetch --logo ${images[$random_index+1]} --logo-height 28 --logo-type kitty
-
+  fastfetch --logo ${img[1]} --logo-type kitty-direct --logo-height ${img[2]} --logo-width ${img[3]}  
 fi
 
 
