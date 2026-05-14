@@ -1,0 +1,19 @@
+# OS-specific
+.DS_Store
+.AppleDouble
+.LSOverride
+Icon?
+
+# General Dev
+node_modules/
+.env
+.env.local
+.vscode/
+.idea/
+*.log
+**/.claude/settings.local.json
+
+# Python/Caches
+__pycache__/
+*.py[cod]
+.pytest_cache/

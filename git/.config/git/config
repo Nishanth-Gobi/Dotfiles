@@ -1,0 +1,12 @@
+[gpg]
+	format = ssh
+[gpg "ssh"]
+	allowedSignersFile = /Users/nish/.config/git/allowed_signers
+[commit]
+	gpgsign = true
+[user]
+	signingkey = /Users/nish/.ssh/id_git_signing_sk.pub
+	name = CyNishanth
+	email = nishanth@cypherhq.io
+[rerere]
+	enabled = true

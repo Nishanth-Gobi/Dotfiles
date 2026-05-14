@@ -1,0 +1,13 @@
+# --- Zsh State & Caches ---
+zsh/.config/zsh/.zhistory
+zsh/.config/zsh/.zcompdump*
+zsh/.config/zsh/.zcompcache/
+zsh/.config/zsh/.zsh_sessions/
+
+# Machine-specific and private
+zsh/.config/zsh/host.zsh
+
+# System junk
+.DS_Store
+.AppleDouble
+.LSOverride
