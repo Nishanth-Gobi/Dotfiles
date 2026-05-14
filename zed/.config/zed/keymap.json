@@ -1,0 +1,90 @@
+// Zed keymap
+//
+// For information on binding keys, see the Zed
+// documentation: https://zed.dev/docs/key-bindings
+//
+// To see the default key bindings run `zed: open default keymap`
+// from the command palette.
+[
+	{
+		"context": "Editor",
+		"bindings": {
+			"cmd-b": "multi_workspace::ToggleWorkspaceSidebar",
+		},
+	},
+	{
+		"context": "Workspace",
+		"bindings": {
+			"cmd-shift-p": "command_palette::Toggle",
+			"cmd-p": "file_finder::Toggle",
+			"shift shift": "file_finder::Toggle",
+			"cmd-`": "workspace::ToggleBottomDock",
+			"cmd-2": "agent::ToggleFocus",
+			"cmd-t": "workspace::NewTerminal",
+		},
+	},
+	{
+		"context": "AgentPanel",
+		"bindings": {
+			"cmd-2": "workspace::ToggleLeftDock",
+		},
+	},
+	{
+		"context": "ProjectPanel && not_editing",
+		"bindings": {
+			// Navigation
+			"enter": "project_panel::OpenPermanent",
+			"escape": "project_panel::ToggleFocus",
+			"h": "project_panel::CollapseSelectedEntry",
+			"j": "menu::SelectNext",
+			"k": "menu::SelectPrevious",
+			"l": "project_panel::ExpandSelectedEntry",
+			"-": "project_panel::SelectParent",
+			// File ops
+			"a": "project_panel::NewFile",
+			"A": "project_panel::NewDirectory",
+			"r": "project_panel::Rename",
+			"d": "project_panel::Delete",
+			"x": "project_panel::Cut",
+			"c": "project_panel::Copy",
+			"p": "project_panel::Paste",
+			// Misc
+			":": "command_palette::Toggle",
+			"/": "project_panel::NewSearchInDirectory",
+		},
+	},
+	{
+		"context": "EmptyPane || SharedScreen",
+		"bindings": {
+			"space space": "file_finder::Toggle",
+			"space s g": "workspace::NewSearch",
+			"space f p": "projects::OpenRecent",
+			"space f n": "workspace::NewFile",
+			"space q q": "zed::Quit",
+			"space g g": [
+				"task::Spawn",
+				{ "task_name": "lazygit", "reveal_target": "center" },
+			],
+		},
+	},
+	{
+		"context": "Editor && VimControl && !VimWaiting && !menu",
+		"bindings": {
+			"space space": "file_finder::Toggle",
+			"space e": "project_panel::ToggleFocus",
+			"space s g": "workspace::NewSearch",
+			"space f r": "projects::OpenRecent",
+			"space f n": "workspace::NewFile",
+			"space g g": [
+				"task::Spawn",
+				{
+					"task_name": "lazygit",
+					"reveal_target": "center",
+				},
+			],
+			"space c r": "editor::Rename",
+
+			// ToDo: split, focus, etc,.
+		},
+	},
+]

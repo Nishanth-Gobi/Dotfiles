@@ -1,0 +1,149 @@
+// Zed settings
+//
+// For information on how to configure Zed, see the Zed
+// documentation: https://zed.dev/docs/configuring-zed
+//
+// To see all of Zed's default settings without changing your
+// custom settings, run `zed: open default settings` from the
+// command palette (cmd-shift-p / ctrl-shift-p)
+{
+	// 1. INDENTATION & FORMATTING
+	"hard_tabs": true,
+	"tab_size": 2,
+	"format_on_save": "on",
+	"remove_trailing_whitespace_on_save": true,
+	"ensure_final_newline_on_save": true,
+	"languages": {
+		"Markdown": { "hard_tabs": false, "tab_size": 2 },
+		"YAML": { "hard_tabs": false, "tab_size": 2 },
+		"JavaScript": { "formatter": { "language_server": { "name": "biome" } } },
+		"TypeScript": { "formatter": { "language_server": { "name": "biome" } } },
+		"TSX": { "formatter": { "language_server": { "name": "biome" } } },
+		"Python": {
+			"hard_tabs": false,
+			"tab_size": 4,
+			"formatter": { "language_server": { "name": "ruff" } },
+		},
+		"Go": { "hard_tabs": true, "tab_size": 4 },
+	},
+	// 2. VISUAL DISPLAY
+	"vim_mode": true,
+	"relative_line_numbers": "enabled",
+	"soft_wrap": "none",
+	"cursor_blink": false,
+	// "inlay_hints": {
+	// 	""
+	// },
+	"show_whitespaces": "selection",
+	"buffer_font_family": "JetBrains Mono",
+	"ui_font_size": 16,
+	"buffer_font_size": 15,
+	"theme": {
+		"mode": "system",
+		"light": "Gruvbox Light",
+		"dark": "Gruvbox Dark",
+	},
+	"icon_theme": {
+		"mode": "system",
+		"light": "Zed (Default)",
+		"dark": "Zed (Default)",
+	},
+	// 3. EDITOR CHROME
+	"scrollbar": {
+		"show": "never",
+	},
+	"tab_bar": {
+		"show": true,
+		"show_nav_history_buttons": false,
+	},
+	"tabs": {
+		"file_icons": true,
+		"git_status": true,
+	},
+	"indent_guides": {
+		"enabled": true,
+		"coloring": "indent_aware",
+	},
+	"toolbar": {
+		"quick_actions": false,
+	},
+	"project_panel": {
+		"dock": "left",
+  "file_icons": true,
+		"folder_icons": true,
+		"git_status": true,
+		"scrollbar": {
+			"show": "never",
+		},
+	},
+	// 4. FILE SCANNING & SEARCH SCOPE
+	"file_scan_inclusions": [".env*"],
+	"file_scan_exclusions": [
+		"**/.git",
+		"**/.svn",
+		"**/.hg",
+		"**/.jj",
+		"**/CVS",
+		"**/.DS_Store",
+		"**/Thumbs.db",
+		"**/.classpath",
+		"**/.settings",
+		"**/node_modules",
+		"**/dist",
+		"**/build",
+		"**/coverage",
+		"**/.next",
+		"**/.turbo",
+		"**/.serverless",
+		"**/.venv",
+		"**/__pycache__",
+		"**/.pytest_cache",
+		"**/.ruff_cache",
+		"**/target",
+	],
+	// 5. SAVE & SESSION BEHAVIOR
+	"autosave": "on_focus_change",
+	"session": {
+		"trust_all_worktrees": true,
+	},
+	// 6. AI & AGENTS
+	"agent_servers": {
+		"codex-acp": {
+			"type": "registry",
+		},
+		"claude-acp": {
+			"type": "registry",
+		},
+	},
+	"edit_predictions": {
+		"disabled_globs": [
+			"**/.git",
+			"**/.svn",
+			"**/.hg",
+			"**/CVS",
+			"**/.DS_Store",
+			"**/Thumbs.db",
+			"**/.classpath",
+			"**/.settings",
+			"**/.vscode",
+			"**/.idea",
+			"**/node_modules",
+			"**/.serverless",
+			"**/build",
+			"**/dist",
+			"**/coverage",
+			"**/.venv",
+			"**/__pycache__",
+			"**/.ropeproject",
+			"**/.pytest_cache",
+			"**/.ruff_cache",
+		],
+	},
+	// 7. PRIVACY
+	"telemetry": {
+		"diagnostics": false,
+		"metrics": false,
+	},
+	// 8. EDITOR-SPECIFIC
+	"base_keymap": "JetBrains",
+}

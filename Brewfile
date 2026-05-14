@@ -1,4 +1,5 @@
 brew 'git'
+brew 'stow'
 brew 'bat'
 brew 'tree'
 brew 'btop'

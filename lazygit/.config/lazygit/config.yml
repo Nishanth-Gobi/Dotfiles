@@ -1,0 +1,4 @@
+git:
+  pagers:
+    - pager: delta --dark --paging=never --syntax-theme base16-256 --diff-so-fancy 
+  autoFetch: false

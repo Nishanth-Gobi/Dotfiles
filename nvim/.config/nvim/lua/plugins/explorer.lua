@@ -13,23 +13,19 @@ return {
         sources = {
           explorer = {
             hidden = true,
-            ignored = false,
+            ignored = true,
+          },
+          files = {
+            hidden = true,
+            ignored = true,
+          },
+          grep = {
+            hidden = true,
+            ignored = true,
           },
         },
       },
     },
   },
 
-  -- Respect .gitignore in telescope find_files
-  {
-    "nvim-telescope/telescope.nvim",
-    opts = {
-      pickers = {
-        find_files = {
-          hidden = true,
-          no_ignore = false,
-        },
-      },
-    },
-  },
 }

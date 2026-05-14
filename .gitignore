@@ -7,6 +7,13 @@ zsh/.config/zsh/.zsh_sessions/
 # Machine-specific and private
 zsh/.config/zsh/host.zsh
 
+# Zed local state
+zed/.config/zed/prompts/
+zed/.config/zed/themes/
+
+# Claude Code per-directory permissions
+**/.claude/settings.local.json
+
 # System junk
 .DS_Store
 .AppleDouble
