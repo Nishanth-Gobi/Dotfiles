@@ -136,3 +136,5 @@ else
   zstyle ':fzf-tab:complete:ls:*' fzf-preview 'head -n 20 $realpath'
 fi
 
+
+. "$HOME/.local/bin/env"
