@@ -9,9 +9,12 @@ cd "$DOTFILES_DIR"
 
 # --- Detect OS ---
 case "$OSTYPE" in
-  darwin*) OS="macos" ;;
-  linux*)  OS="linux" ;;
-  *) echo "Unsupported OS: $OSTYPE" >&2; exit 1 ;;
+darwin*) OS="macos" ;;
+linux*) OS="linux" ;;
+*)
+  echo "Unsupported OS: $OSTYPE" >&2
+  exit 1
+  ;;
 esac
 echo "==> Detected: $OS"
 
@@ -41,7 +44,7 @@ git -C "$DOTFILES_DIR" submodule update --init --recursive
 mkdir -p "$HOME/.config"
 
 # --- Modules ---
-COMMON_MODULES=(home zsh git kitty nvim btop fastfetch fish assets aws alacritty zed lazygit)
+COMMON_MODULES=(home zsh git kitty nvim btop fastfetch assets aws zed lazygit)
 MACOS_MODULES=(aerospace raycast)
 
 MODULES=("${COMMON_MODULES[@]}")
