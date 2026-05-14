@@ -1,0 +1,81 @@
+site_name: Nish's Dotfiles
+site_description: XDG-compliant, GNU Stow managed dotfiles for macOS and Linux
+site_url: https://nishanth-gobi.github.io/Dotfiles/
+repo_url: https://github.com/Nishanth-Gobi/Dotfiles
+repo_name: Nishanth-Gobi/Dotfiles
+edit_uri: edit/main/docs/
+
+theme:
+  name: material
+  features:
+    - navigation.tabs
+    - navigation.tabs.sticky
+    - navigation.sections
+    - navigation.top
+    - navigation.indexes
+    - navigation.instant
+    - toc.follow
+    - search.suggest
+    - search.highlight
+    - content.code.copy
+    - content.code.annotate
+    - content.action.edit
+  palette:
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: deep purple
+      accent: amber
+      toggle:
+        icon: material/weather-night
+        name: Dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: deep purple
+      accent: amber
+      toggle:
+        icon: material/weather-sunny
+        name: Light mode
+  icon:
+    repo: fontawesome/brands/github
+
+plugins:
+  - search
+  - include-markdown
+
+markdown_extensions:
+  - admonition
+  - attr_list
+  - md_in_html
+  - toc:
+      permalink: true
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.inlinehilite
+  - pymdownx.superfences
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.snippets:
+      base_path: ['.']
+      check_paths: true
+  - pymdownx.details
+
+nav:
+  - Home: index.md
+  - Setup:
+      - macOS: setup/macos.md
+      - Linux: setup/linux.md
+  - Modules:
+      - Overview: modules/index.md
+      - zsh: modules/zsh.md
+      - nvim: modules/nvim.md
+      - git: modules/git.md
+      - kitty: modules/kitty.md
+      - zed: modules/zed.md
+      - btop: modules/btop.md
+      - fastfetch: modules/fastfetch.md
+      - lazygit: modules/lazygit.md
+      - aws: modules/aws.md
+      - aerospace: modules/aerospace.md
+      - assets: modules/assets.md

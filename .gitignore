@@ -14,7 +14,11 @@ zed/.config/zed/themes/
 # Claude Code per-directory permissions
 **/.claude/settings.local.json
 
+# mkdocs build output
+site/
+
 # System junk
 .DS_Store
 .AppleDouble
 .LSOverride
+.venv-docs/
