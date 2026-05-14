@@ -3,7 +3,7 @@
 Modern, XDG-compliant, modular configuration for macOS (Apple Silicon)
 and Linux VMs. Built for speed, minimalism, and a clean `$HOME`.
 
-> 📖 **Full docs:** <https://nishanth-gobi.github.io/Dotfiles/>
+> 📖 **Full docs:** <https://dotfiles.nishanthgobi.com/>
 
 ## Architecture
 
@@ -23,7 +23,7 @@ cd ~/dotfiles/Dotfiles
 `install.sh` installs Homebrew (macOS), runs `brew bundle`, initializes
 zsh-plugin submodules, then `stow`s each module with dry-run conflict
 detection. On Linux, package install is manual — see the
-[Linux setup page](https://nishanth-gobi.github.io/Dotfiles/setup/linux/).
+[Linux setup page](https://dotfiles.nishanthgobi.com/setup/linux/).
 
 ## Modules
 
@@ -51,7 +51,7 @@ skipped otherwise. Gitignored, never tracked.
 
 Work git identity: `~/.config/git/work.local`. Auto-loaded by `includeIf`
 for any repo under `~/work/`. Also machine-local. See the
-[git module page](https://nishanth-gobi.github.io/Dotfiles/modules/git/)
+[git module page](https://dotfiles.nishanthgobi.com/modules/git/)
 for the full pattern.
 
 ## Maintenance
@@ -78,5 +78,5 @@ stow -d ~/dotfiles/Dotfiles -t ~ --restow zsh
 ```sh
 python3 -m venv .venv-docs
 .venv-docs/bin/pip install -r requirements-docs.txt
-.venv-docs/bin/mkdocs serve   # http://127.0.0.1:8000/Dotfiles/
+.venv-docs/bin/mkdocs serve   # http://127.0.0.1:8000/
 ```

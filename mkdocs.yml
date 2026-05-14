@@ -1,6 +1,6 @@
 site_name: Nish's Dotfiles
 site_description: XDG-compliant, GNU Stow managed dotfiles for macOS and Linux
-site_url: https://nishanth-gobi.github.io/Dotfiles/
+site_url: https://dotfiles.nishanthgobi.com/
 repo_url: https://github.com/Nishanth-Gobi/Dotfiles
 repo_name: Nishanth-Gobi/Dotfiles
 edit_uri: edit/main/docs/
