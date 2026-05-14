@@ -1,12 +1,11 @@
-[gpg]
-	format = ssh
-[gpg "ssh"]
-	allowedSignersFile = /Users/nish/.config/git/allowed_signers
-[commit]
-	gpgsign = true
 [user]
-	signingkey = /Users/nish/.ssh/id_git_signing_sk.pub
-	name = CyNishanth
-	email = nishanth@cypherhq.io
+	name = Nishanth Gobi
+	email = nish.professional@gmail.com
 [rerere]
 	enabled = true
+
+# Work identity lives outside this repo (machine-local, not tracked).
+# Create ~/.config/git/work.local with [user] + signing settings,
+# and any repo under ~/work/ will use it.
+[includeIf "gitdir:~/work/"]
+	path = ~/.config/git/work.local
