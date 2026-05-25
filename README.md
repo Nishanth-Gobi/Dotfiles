@@ -4,6 +4,8 @@ Modern, XDG-compliant, modular configuration for macOS (Apple Silicon)
 and Linux VMs. Built for speed, minimalism, and a clean `$HOME`.
 
 > 📖 **Full docs:** <https://dotfiles.nishanthgobi.com/>
+>
+> 🧭 **Editor spec:** [`docs/philosophy.md`](docs/philosophy.md) — portable source of truth for `nvim` + `zed` modules.
 
 ## Architecture
 
