@@ -8,6 +8,7 @@
 // command palette (cmd-shift-p / ctrl-shift-p)
 {
 	// 1. INDENTATION & FORMATTING
+	"diff_view_style": "split",
 	"hard_tabs": true,
 	"tab_size": 2,
 	"format_on_save": "on",
@@ -25,6 +26,7 @@
 			"formatter": { "language_server": { "name": "ruff" } },
 		},
 		"Go": { "hard_tabs": true, "tab_size": 4 },
+		"YAML": { "format_on_save": "off" },
 	},
 	// 2. VISUAL DISPLAY
 	"vim_mode": true,
@@ -69,7 +71,7 @@
 	},
 	"project_panel": {
 		"dock": "left",
-  "file_icons": true,
+		"file_icons": true,
 		"folder_icons": true,
 		"git_status": true,
 		"scrollbar": {

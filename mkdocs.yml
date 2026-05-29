@@ -73,6 +73,7 @@ nav:
       - nvim: modules/nvim.md
       - git: modules/git.md
       - kitty: modules/kitty.md
+      - tmux: modules/tmux.md
       - zed: modules/zed.md
       - btop: modules/btop.md
       - fastfetch: modules/fastfetch.md

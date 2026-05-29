@@ -36,6 +36,7 @@ detection. On Linux, package install is manual — see the
 | git        | Personal git config + `includeIf` work   | both     |
 | nvim       | LazyVim-based editor                     | both     |
 | kitty      | Terminal emulator                        | both     |
+| tmux       | Terminal multiplexer                     | both     |
 | zed        | Zed editor settings + keymaps            | both     |
 | btop       | System monitor                           | both     |
 | fastfetch  | System info on shell startup             | both     |

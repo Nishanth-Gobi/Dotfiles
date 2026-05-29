@@ -44,7 +44,7 @@ git -C "$DOTFILES_DIR" submodule update --init --recursive
 mkdir -p "$HOME/.config"
 
 # --- Modules ---
-COMMON_MODULES=(home zsh git kitty nvim btop fastfetch assets aws zed lazygit)
+COMMON_MODULES=(home zsh git kitty nvim btop fastfetch assets aws zed lazygit tmux)
 MACOS_MODULES=(aerospace raycast)
 
 MODULES=("${COMMON_MODULES[@]}")
