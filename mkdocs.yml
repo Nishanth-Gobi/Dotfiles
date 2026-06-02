@@ -79,5 +79,6 @@ nav:
       - fastfetch: modules/fastfetch.md
       - lazygit: modules/lazygit.md
       - aws: modules/aws.md
+      - claude: modules/claude.md
       - aerospace: modules/aerospace.md
       - assets: modules/assets.md

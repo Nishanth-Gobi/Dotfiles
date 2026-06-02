@@ -14,6 +14,13 @@ zed/.config/zed/themes/
 # Claude Code per-directory permissions
 **/.claude/settings.local.json
 
+# Global Claude module: allowlist shareable items only
+claude/.claude/*
+!claude/.claude/CLAUDE.md
+!claude/.claude/settings.json
+!claude/.claude/skills/
+!claude/.claude/skills/**
+
 # mkdocs build output
 site/
 

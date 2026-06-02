@@ -44,7 +44,7 @@ git -C "$DOTFILES_DIR" submodule update --init --recursive
 mkdir -p "$HOME/.config"
 
 # --- Modules ---
-COMMON_MODULES=(home zsh git kitty nvim btop fastfetch assets aws zed lazygit tmux)
+COMMON_MODULES=(home zsh git kitty nvim btop fastfetch assets aws zed lazygit tmux claude)
 MACOS_MODULES=(aerospace raycast)
 
 MODULES=("${COMMON_MODULES[@]}")
@@ -57,13 +57,16 @@ for module in "${MODULES[@]}"; do
     echo "  skip $module (missing)"
     continue
   fi
-  if ! stow -d "$DOTFILES_DIR" -t "$HOME" -n "$module" 2>/tmp/stow-err; then
+  # claude shares ~/.claude with runtime state; --no-folding links individual children only.
+  stow_flags=()
+  [[ "$module" == "claude" ]] && stow_flags+=(--no-folding)
+  if ! stow -d "$DOTFILES_DIR" -t "$HOME" "${stow_flags[@]}" -n "$module" 2>/tmp/stow-err; then
     echo "  CONFLICT $module — resolve then re-run:"
     cat /tmp/stow-err
     echo "  Hint: move existing file aside, or run 'stow --restow $module' if previously linked."
     exit 1
   fi
-  stow -d "$DOTFILES_DIR" -t "$HOME" --restow "$module"
+  stow -d "$DOTFILES_DIR" -t "$HOME" "${stow_flags[@]}" --restow "$module"
   echo "  linked $module"
 done
 

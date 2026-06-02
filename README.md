@@ -42,6 +42,7 @@ detection. On Linux, package install is manual — see the
 | fastfetch  | System info on shell startup             | both     |
 | lazygit    | Git TUI                                  | both     |
 | aws        | AWS CLI config (dummy creds)             | both     |
+| claude     | Global Claude Code config + skills       | both     |
 | assets     | Wallpapers, terminal art, ASCII          | both     |
 | aerospace  | Tiling window manager                    | macOS    |
 | raycast    | Launcher config export                   | macOS    |
