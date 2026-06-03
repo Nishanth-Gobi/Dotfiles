@@ -6,7 +6,7 @@ Adding a new one:
 ```sh
 mkdir -p mytool/.config/mytool
 mv ~/.config/mytool/* mytool/.config/mytool/
-stow -d ~/dotfiles/Dotfiles -t ~ mytool
+stow -d ~/dotfiles -t ~ mytool
 ```
 
 Then append `mytool` to the `COMMON_MODULES` (or `MACOS_MODULES`) array in

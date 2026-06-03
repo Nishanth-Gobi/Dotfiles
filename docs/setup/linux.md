@@ -9,8 +9,8 @@ sudo apt-get install -y git stow zsh   # Debian/Ubuntu
 # OR
 sudo pacman -S --needed git stow zsh   # Arch
 
-git clone --recursive https://github.com/Nishanth-Gobi/Dotfiles.git ~/dotfiles/Dotfiles
-cd ~/dotfiles/Dotfiles
+git clone --recursive https://github.com/Nishanth-Gobi/Dotfiles.git ~/dotfiles
+cd ~/dotfiles
 ./install.sh
 ```
 

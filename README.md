@@ -17,8 +17,8 @@ contents into `$HOME`, keeping `$HOME` tidy and configs colocated under
 ## Quick start
 
 ```sh
-git clone --recursive git@github.com:Nishanth-Gobi/Dotfiles.git ~/dotfiles/Dotfiles
-cd ~/dotfiles/Dotfiles
+git clone --recursive git@github.com:Nishanth-Gobi/Dotfiles.git ~/dotfiles
+cd ~/dotfiles
 ./install.sh
 ```
 
@@ -64,17 +64,17 @@ for the full pattern.
 # Add a new module
 mkdir -p mytool/.config/mytool
 mv ~/.config/mytool/* mytool/.config/mytool/
-stow -d ~/dotfiles/Dotfiles -t ~ mytool
+stow -d ~/dotfiles -t ~ mytool
 # then add `mytool` to COMMON_MODULES in install.sh
 
 # Update zsh plugin submodules
 git submodule update --remote --merge
 
 # Refresh Brewfile from current state
-brew bundle dump --force --file=~/dotfiles/Dotfiles/Brewfile
+brew bundle dump --force --file=~/dotfiles/Brewfile
 
 # Re-link a module after editing the source
-stow -d ~/dotfiles/Dotfiles -t ~ --restow zsh
+stow -d ~/dotfiles -t ~ --restow zsh
 ```
 
 ## Local docs preview

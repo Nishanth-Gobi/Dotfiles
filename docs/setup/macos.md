@@ -5,8 +5,8 @@ Apple Silicon Macs. Tested on macOS 14+.
 ## One-shot bootstrap
 
 ```sh
-git clone --recursive https://github.com/Nishanth-Gobi/Dotfiles.git ~/dotfiles/Dotfiles
-cd ~/dotfiles/Dotfiles
+git clone --recursive https://github.com/Nishanth-Gobi/Dotfiles.git ~/dotfiles
+cd ~/dotfiles
 ./install.sh
 ```
 
@@ -38,7 +38,7 @@ mv ~/.config/kitty/kitty.conf ~/.config/kitty/kitty.conf.bak
 ## Manual rerun for one module
 
 ```sh
-cd ~/dotfiles/Dotfiles
+cd ~/dotfiles
 stow -d . -t ~ --restow kitty
 ```
 
@@ -51,5 +51,5 @@ if present, skips silently otherwise.
 ## Brewfile update
 
 ```sh
-brew bundle dump --force --file=~/dotfiles/Dotfiles/Brewfile
+brew bundle dump --force --file=~/dotfiles/Brewfile
 ```

@@ -10,7 +10,7 @@ Running `stow <tool>` symlinks its contents into `$HOME`, keeping `$HOME` tidy a
 configs colocated under `$XDG_CONFIG_HOME`.
 
 ```text
-Dotfiles/
+dotfiles/
 ├── home/.zshenv             # → ~/.zshenv
 ├── zsh/.config/zsh/         # → ~/.config/zsh/
 ├── nvim/.config/nvim/       # → ~/.config/nvim/
@@ -20,8 +20,8 @@ Dotfiles/
 ## Quick start
 
 ```sh
-git clone --recursive https://github.com/Nishanth-Gobi/Dotfiles.git ~/dotfiles/Dotfiles
-cd ~/dotfiles/Dotfiles
+git clone --recursive https://github.com/Nishanth-Gobi/Dotfiles.git ~/dotfiles
+cd ~/dotfiles
 ./install.sh
 ```
 
